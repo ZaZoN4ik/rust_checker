@@ -1,0 +1,17 @@
+# Фронтенд (React / Vite)
+node_modules/
+dist/
+.DS_Store
+
+# Бэкенд (Python)
+backend/.venv/
+backend/venv/
+backend/.env
+backend/__pycache__/
+backend/**/*.pyc
+backend/database.db
+
+# Логи и кэш
+*.log
+.idea/
+.vscode/
