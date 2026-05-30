@@ -1,0 +1,113 @@
+:root {
+  /* Задаем яркий фон, чтобы стекло смотрелось эффектно */
+  --bg-gradient: linear-gradient(135deg, #1f1c2c, #928dab);
+  --text-color: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(12px);
+  --accent-color: #2ea6ff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  user-select: none;
+  min-height: 100vh;
+}
+
+.app-container {
+  padding: 16px;
+}
+
+/* --- СТИЛИ ДЛЯ КНОПОК (СТЕКЛО) --- */
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.menu-button {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 16px;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-button:active {
+  transform: scale(0.96);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-button.full-width {
+  width: 100%;
+}
+
+/* --- ЭКРАН ПОИСКА (СТЕКЛО) --- */
+.search-view .back-button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  opacity: 0.8;
+  font-size: 16px;
+  padding: 0 0 16px 0;
+  cursor: pointer;
+}
+
+.search-view h2 {
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.search-view .description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+  margin-bottom: 24px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.tg-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text-color);
+  font-size: 16px;
+  outline: none;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  transition: border-color 0.3s;
+}
+
+.tg-input:focus {
+  border-color: var(--accent-color);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.tg-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
